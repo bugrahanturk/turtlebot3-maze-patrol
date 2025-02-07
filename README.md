@@ -115,7 +115,7 @@ rosrun turtlebot3_devriye voronoi_segments
 <img src="turtlebot3_maze_devriye/imgs/voronoili_map.png" width="874"/>
 </p>
 
-#### 7th Patrol Mission
+### 7. Patrol Mission
 ##### Step 7: Run the patrol node
 ```
 rosrun turtlebot3_devriye devriye
