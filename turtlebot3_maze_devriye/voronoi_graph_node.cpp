@@ -44,7 +44,7 @@ namespace tuw_graph
         //endSegmentOptimization_ = std::min<float>(endSegmentOptimization_, 0.7 * path_length_);
 
         //n_param_.param<std::string>("graph_cache_path", graphCachePath_, "/tmp");
-        n_param_.param<std::string>("graph_cache_path", graphCachePath_, "/home/nbt/voronoi_graphs"); // "/graphin_kaydedilmesi_istenilen_yer"
+        n_param_.param<std::string>("graph_cache_path", graphCachePath_, "/home/nbt/voronoi_graphs"); // "/where-you-want-to-save-the-graph"
 
         if (graphCachePath_.back() != '/'){
             graphCachePath_ += "/";
@@ -186,8 +186,8 @@ namespace tuw_graph
         graph.header.seq = 0;
         graph.header.stamp = ros::Time::now();
 
-        graph.origin.position.x = -10.0; // SOLVE MAZE ICIN -10
-        graph.origin.position.y = -10.0; // SOLVE MAZE ICIN -10
+        graph.origin.position.x = -10.0; // For SOLVE MAZE make this -10
+        graph.origin.position.y = -10.0; // For SOLVE MAZE make this -10
 
         for (auto it = segments_.begin(); it != segments_.end(); ++it)
         {
@@ -202,8 +202,8 @@ namespace tuw_graph
             for (uint32_t i = 0; i < path.size(); i++)
             {
                 geometry_msgs::Point pos;
-                pos.x = path[i][0] * resolution_ + graph.origin.position.x; // originler eklendi
-                pos.y = path[i][1] * resolution_ + graph.origin.position.y; // originler eklendi
+                pos.x = path[i][0] * resolution_ + graph.origin.position.x; // origins added
+                pos.y = path[i][1] * resolution_ + graph.origin.position.y; // origins added
                 pos.z = 0;
 
                 seg.path.push_back(pos);
